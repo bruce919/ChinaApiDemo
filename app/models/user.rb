@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
+
+	#裝bcrypt後，加入這一行加強密碼安全
 	has_secure_password
 
-	 before_create :generate_authentication_token
+	before_create :generate_authentication_token
 
 	  def generate_authentication_token
 	    loop do
